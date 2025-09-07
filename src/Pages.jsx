@@ -56,32 +56,32 @@ function Pages({setPageFetch, lastPage}){
     }
     return(<>
         <div className="flex justify-center gap-2 mt-5">
-        <button className="bg-white size-10 font-bold flex items-center justify-center rounded-full" onClick={() => {prevPage()}}>{"<"}</button>
-            <button className=" size-10 font-bold flex items-center justify-center rounded-full" style={{backgroundColor: page - 2 == selectedPage ? "black" : "white",
+        <button className="bg-white sm:size-10 size-7 font-bold flex items-center justify-center rounded-full" onClick={() => {prevPage()}}>{"<"}</button>
+            <button className=" sm:size-10 size-7 font-bold flex items-center justify-center rounded-full" style={{backgroundColor: page - 2 == selectedPage ? "black" : "white",
               border: page - 2 == selectedPage ? "1px solid white" : "none",
               color: page - 2 == selectedPage ? "white" : "black"
             }} onClick={(event)=>{pageHandler(event)}}>{page - 2}</button>
-            <button className=" size-10 font-bold  items-center justify-center rounded-full" style={{backgroundColor: page - 1 == selectedPage ? "black" : "white",
+            <button className=" sm:size-10 size-7 font-bold  items-center justify-center rounded-full" style={{backgroundColor: page - 1 == selectedPage ? "black" : "white",
               border: page - 1 == selectedPage ? "1px solid white" : "none",
               color: page - 1 == selectedPage ? "white" : "black",
               display: lastPage >= 2 ? "flex" : "none"
             }} onClick={(event)=>{pageHandler(event)}}>{page - 1}</button>
-            <button className=" size-10 font-bold  items-center justify-center rounded-full" style={{backgroundColor: page  == selectedPage ? "black" : "white",
+            <button className=" sm:size-10 size-7 font-bold  items-center justify-center rounded-full" style={{backgroundColor: page  == selectedPage ? "black" : "white",
               border: page  == selectedPage ? "1px solid white" : "none",
               color: page  == selectedPage ? "white" : "black",
               display: lastPage >= 3 ? "flex" : "none"
             }} onClick={(event)=>{pageHandler(event)}}>{page}</button>
-            <button className=" size-10 font-bold items-center justify-center rounded-full" style={{backgroundColor: page + 1== selectedPage ? "black" : "white",
+            <button className=" sm:size-10 size-7 font-bold items-center justify-center rounded-full" style={{backgroundColor: page + 1== selectedPage ? "black" : "white",
               border: page + 1 == selectedPage ? "1px solid white" : "none",
               color: page + 1 == selectedPage ? "white" : "black",
               display: lastPage >= 4 ? "flex" : "none"
             }} onClick={(event)=>{pageHandler(event)}}>{page + 1}</button>
-            <button className=" size-10 font-bold  items-center justify-center rounded-full" style={{backgroundColor: page + 2 == selectedPage ? "black" : "white",
+            <button className=" sm:size-10 size-7 font-bold  items-center justify-center rounded-full" style={{backgroundColor: page + 2 == selectedPage ? "black" : "white",
               border: page + 2 == selectedPage ? "1px solid white" : "none",
               color: page + 2 == selectedPage ? "white" : "black",
               display: lastPage >= 5 ? "flex" : "none"
             }} onClick={(event)=>{pageHandler(event)}}>{page + 2}</button>
-            <button className="bg-white size-10 font-bold flex items-center justify-center rounded-full" onClick={() => {nextPage()}}>{">"}</button>
+            <button className="bg-white sm:size-10 size-7 font-bold flex items-center justify-center rounded-full" onClick={() => {nextPage()}}>{">"}</button>
         </div>
     </>)
 }

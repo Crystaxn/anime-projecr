@@ -72,7 +72,7 @@ const fetchAnime = async () => {
 
                   
                   return (
-                    <div key={results.mal_id} className="flex bg-gray-950 w-96 p-2 h-52 overflow-hidden rounded-lg hover:transform hover:scale-105 transition ease-in-out shadow-md shadow-black hover:shadow-2xs" onClick={() => { handleCardPopup(results) }}>
+                    <div key={results.mal_id} className="flex bg-gray-950 sm:w-96 w-80 p-2 sm:h-52 h-44 overflow-hidden rounded-lg hover:transform hover:scale-105 transition ease-in-out shadow-md shadow-black hover:shadow-2xs" onClick={() => { handleCardPopup(results) }}>
                       <img className="m-0 p-0 w-36" src={results.images.jpg.image_url} alt="" />
                       <div className=" bg-gray-900 ml-2 p-2 rounded-2xl flex flex-col justify-between">
                         <div className="flex flex-col justify-between h-auto">

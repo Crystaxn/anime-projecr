@@ -221,7 +221,7 @@ function Tailwind() {
           <Dropdown anime={anime} setAnime={setAnime} setShow={setShow} setAllAnime={setAllAnime} setIsLoading={setIsLoading}></Dropdown>
           
 
-          <div className="text-3xl">Crystaxn</div>
+          <div className="text-3xl sm:block hidden">Crystaxn</div>
         </div>
         
         {error.length > 0 && (<div >ggg</div>)}
@@ -319,7 +319,7 @@ function Tailwind() {
 
 
                         </div>
-                        <p className=" text-white text-xl">Searched for: {searchQuery} <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></p>
+                        <p className=" text-white text-xl sm:block hidden">Searched for: {searchQuery} <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></p>
                       </div>
                       
 
@@ -343,10 +343,10 @@ function Tailwind() {
                     </div>
                     
                   </div>
-                 
+                  <p className=" text-white text-xl sm:hidden block">Searched for: {searchQuery} <FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></p>
                 </div>
               </div>
-              <div className=" xl:grid-cols-3 xl:gap-x-20 grid md:gap-x-3 gap-y-2 xl:w-6xl justify-self-center md:w:5xl md:grid-cols-2 grid-cols-1" >
+              <div className=" xl:grid-cols-3 xl:gap-x-20 grid md:gap-x-3 gap-y-2 xl:w-6xl sm:justify-self-center md:w:5xl md:grid-cols-2 sm:pl-0 pl-3 sm:grid-cols-2 grid-cols-1" >
                 
 
                 {anime.map((results) => {
@@ -355,22 +355,29 @@ function Tailwind() {
 
                   
                   return (
-                    <div key={results.mal_id} className="flex bg-gray-950 w-96 p-2 h-52 overflow-hidden rounded-lg hover:transform hover:scale-105 transition ease-in-out shadow-md shadow-black hover:shadow-2xs" onClick={() => { handleCardPopup(results) }}>
-                      <img className="m-0 p-0 w-36" src={results.images.jpg.image_url} alt="" />
-                      <div className=" bg-gray-900 ml-2 p-2 rounded-2xl flex flex-col justify-between">
+                    <div key={results.mal_id} className="flex bg-gray-950 md:w-96 w-80 p-2 md:h-52 h-44  overflow-hidden rounded-lg hover:transform hover:scale-105 transition ease-in-out shadow-md shadow-black hover:shadow-2xs" onClick={() => { handleCardPopup(results) }}>
+                      <img className="m-0 p-0 min-w-36" src={results.images.jpg.image_url} alt="" />
+                      <div className=" bg-gray-900 ml-2 p-2 rounded-2xl flex flex-col justify-between w-full">
                         <div className="flex flex-col justify-between h-auto">
-                        <p className="text-white font-bold text-xl line-clamp-2">
+                          <div className="flex justify-between items-start w-full">
+                        
+                        <div className="text-white font-bold text-xl line-clamp-2 p-0 m-0 w-fit">
                           {results.title_english === null ? results.title : results.title_english}
-                        </p>
-                        <p className={`text-gray-400 line-clamp-3`}>
+                        </div>
+                        {Array.isArray(results.genres) && results.genres.some(g => nsfwGenres.includes(g.name)) &&(<><div className="bg-pink-500 text-white px-2 rounded-2xl flex items-center h-fit mr-5">Nsfw</div></>)}
+                        </div>
+                        
+                        <p className={`text-gray-400 md:line-clamp-3 line-clamp-2`}>
                           {results.synopsis}
                         </p>
                         </div>
+                        
                         <div className="flex justify-between">
                         <div className="bg-blue-600 text-white w-fit p-0.5 rounded-2xl px-2">{results.aired?.from ? results.aired.from.slice(0, 4) : "No info"}</div>
                         <p className="bg-gray-800 text-lg  w-fit pl-2 pr-2 text-gray-300 text-center rounded-2xl flex items-center justify-center " ><FontAwesomeIcon className="text-yellow-400" icon={faStar}></FontAwesomeIcon>     {Math.trunc(results.score*10)/10 || "N/A"}</p>
-                        {Array.isArray(results.genres) && results.genres.some(g => nsfwGenres.includes(g.name)) &&(<><div className="bg-pink-500 text-white px-2 rounded-2xl flex items-center">Nsfw</div></>)}
+                        
                       </div>
+                      
                       </div>
                      
 
