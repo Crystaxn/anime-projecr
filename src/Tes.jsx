@@ -356,28 +356,30 @@ function Tailwind() {
 
                   
                   return (
-                    <div key={results.mal_id} className="flex bg-gray-950 md:w-96 w-80 p-2 md:h-52 h-44  overflow-hidden rounded-lg hover:transform hover:scale-105 transition ease-in-out shadow-md shadow-black hover:shadow-2xs" onClick={() => { handleCardPopup(results) }}>
+                    <div key={results.mal_id} className="flex bg-gray-950 md:w-96 w-80 p-2 md:h-52 h-44  overflow-hidden rounded-lg hover:transform hover:scale-105 transition ease-in-out shadow-md shadow-black hover:shadow-2xs " onClick={() => { handleCardPopup(results) }}>
                       <img className="m-0 p-0 min-w-36" src={results.images.jpg.image_url} alt="" />
                       <div className=" bg-gray-900 ml-2 p-2 rounded-2xl flex flex-col justify-between w-full">
-                        <div className="flex flex-col justify-between h-auto">
+                        
                           <div className="flex justify-between items-start w-full">
                         
                         <div className="text-white font-bold text-xl line-clamp-2 p-0 m-0 w-fit">
                           {results.title_english === null ? results.title : results.title_english}
                         </div>
-                        {Array.isArray(results.genres) && results.genres.some(g => nsfwGenres.includes(g.name)) &&(<><div className="bg-pink-500 text-white px-2 rounded-2xl flex items-center h-fit mr-5">Nsfw</div></>)}
+                        {Array.isArray(results.genres) && results.genres.some(g => nsfwGenres.includes(g.name)) &&(<><div className="bg-pink-500 text-white px-2 rounded-2xl flex items-center h-fit ">Nsfw</div></>)}
                         </div>
+                        <div className="w-fit">
                         
                         <p className={`text-gray-400 md:line-clamp-3 line-clamp-2`}>
                           {results.synopsis}
                         </p>
                         </div>
-                        
+                        <div className="flex justify-end flex-col ">
                         <div className="flex justify-between">
-                        <div className="bg-blue-600 text-white w-fit p-0.5 rounded-2xl px-2">{results.aired?.from ? results.aired.from.slice(0, 4) : "No info"}</div>
-                        <p className="bg-gray-800 text-lg  w-fit pl-2 pr-2 text-gray-300 text-center rounded-2xl flex items-center justify-center " ><FontAwesomeIcon className="text-yellow-400" icon={faStar}></FontAwesomeIcon>     {Math.trunc(results.score*10)/10 || "N/A"}</p>
-                        
-                      </div>
+                        <div className="bg-blue-600 text-white w-fit p-0.5 rounded-2xl px-2 max-h-7 ">{results.aired?.from ? results.aired.from.slice(0, 4) : "No info"}</div>
+                        <p className="bg-gray-800 text-lg  w-fit pl-2 pr-2 text-gray-300 text-center rounded-2xl flex items-center justify-center " ><FontAwesomeIcon className="text-yellow-400" icon={faStar}></FontAwesomeIcon>     {Math.trunc(results.score*10)/10 || "?"}</p>
+                        </div>
+                        </div>
+                    
                       
                       </div>
                      

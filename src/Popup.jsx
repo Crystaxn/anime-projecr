@@ -10,7 +10,7 @@ function Popup({imgUrl, synopsis, title, rating, episodes, animeId, setSelectedA
         }}>
               <div className="p-4 bg-gray-900 text-white flex flex-col gap-3 rounded-lg">
         <div className="min-h-70 max-h-70 overflow-hidden border-2 border-white rounded-lg ">
-            <img src={imgUrl} alt="" className="w-full  " />
+            <img src={imgUrl} alt="" className="w-full min-h-70 " />
             
             </div>
             <button onClick={() => {close(animeId)}} className="bg-neutral-300 text-black fixed right-6 size-15 rounded-lg top-6 text-3xl shadow-neutral-900 shadow-[0_0_15px_rgba(0,0,0,0.5)] ">x</button>
