@@ -246,7 +246,7 @@ function Tailwind() {
         <div className=" sm:items-center flex flex-col h-fit pt-40 gap-10 pb-4 bg-stone-900">
           <h1 className="text-neutral-200 text-shadow-neutral-500 text-shadow-sm text-7xl font-bold mx-4">anime project.</h1>
           <div className="w-fit flex border-2 overflow-hidden rounded-2xl mr-10 text-white mx-4" >
-            <input type="text" className="text-lg sm:w-lg w-2xs bg-neutral-950 text-left pl-2" value={searchQuery}
+            <input type="text" className="text-lg sm:w-lg w-3xs bg-neutral-950 text-left pl-2" value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)} placeholder="Search for an anime!"/>
             <button className="bg-stone-800 text-white  flex  h-12 hover:bg-stone-400 hover:cursor-pointer items-center w-15 justify-center" onClick={() => { validateAndSearch() }}><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon></button>
           </div>
